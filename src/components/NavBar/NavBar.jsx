@@ -28,11 +28,11 @@ const NavBarRight = styled.div`
 /**
  * The NavBar is not generally consumed alone, but instead used by the AppShell component. (This page is WIP. Examples coming soon.)
  */
-const NavBar = ({ user }) => (
+const NavBar = ({ user, activeProduct }) => (
   <NavBarStyled>
     <NavBarLeft>
       <BufferLogo />
-      <NavBarProducts />
+      <NavBarProducts activeProduct={activeProduct} />
     </NavBarLeft>
     <NavBarRight>
       {user.menuItems && (
@@ -59,6 +59,11 @@ NavBar.propTypes = {
       onItemClick: PropTypes.func,
     })),
   }).isRequired,
+  activeProduct: PropTypes.oneOf(['publish', 'analyze', 'reply']),
+};
+
+NavBar.defaultProps = {
+  activeProduct: 'publish'
 };
 
 export default NavBar;
