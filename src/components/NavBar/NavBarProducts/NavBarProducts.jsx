@@ -35,15 +35,15 @@ const ProductText = styled.span`
 
 const NavBarProduct = ({ activeProduct }) => (
   <StlyedNavBarProduct>
-    <ProductLink active={activeProduct === 'publish'} href={activeProduct !== 'publish' ? 'https://publish.buffer.com' : '/'}>
+    <ProductLink active={activeProduct === 'publish'} href='https://publish.buffer.com'>
       <IconPublish verticalAlign="middle" />
       <ProductText>Publish</ProductText>
     </ProductLink>
-    <ProductLink active={activeProduct === 'reply'} href={activeProduct !== 'reply' ? 'https://reply.buffer.com' : '/'}>
+    <ProductLink active={activeProduct === 'reply'} href='https://reply.buffer.com'>
       <IconReply verticalAlign="middle" />
       <ProductText>Reply</ProductText>
     </ProductLink>
-    <ProductLink active={activeProduct === 'analyze'} href={activeProduct !== 'analyze' ? 'https://analyze.buffer.com' : '/'}>
+    <ProductLink active={activeProduct === 'analyze'} href='https://analyze.buffer.com'>
       <IconAnalyze verticalAlign="middle" />
       <ProductText>Analyze</ProductText>
     </ProductLink>
