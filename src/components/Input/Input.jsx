@@ -15,7 +15,8 @@ const Input = ({
   placeholder,
   size,
   type,
-  value
+  value,
+  ...props
 }) => (
   <Styles.InputWrapper>
     {label.length > 0 && <Text htmlFor={name} type='label'>{label}</Text>}
@@ -28,6 +29,7 @@ const Input = ({
       type={type}
       size={size}
       value={value}
+      {...props}
     />
     {help.length > 0 && (
       <Text type='help' htmlFor={name} hasError={hasError}>
