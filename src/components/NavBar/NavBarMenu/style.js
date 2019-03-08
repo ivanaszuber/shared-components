@@ -9,7 +9,7 @@ export const NavBarStyled = styled.div`
   align-items: center;
   justify-content: center;
   background: ${grayDark};
-  padding: 0px 8px 0px 16px;
+  padding: 0px 16px;
   height: 64px;
   width: 230px;
 `;
@@ -18,12 +18,13 @@ export const NavBarUser = styled.div`
   display: flex;
   align-items: end;
   flex-direction: column;
-  padding-right: 20px;
+  overflow: hidden;
+  margin-right: 20px;
 `;
 
 export const NavBarAvatar = styled.div`
   border-radius: 100px;
-  width: 40px;
+  width: 60px;
   height: 40px;
   background: ${gray};
   cursor: pointer;
@@ -35,11 +36,19 @@ export const NavBarName = styled.div`
   font-size: 16px;
   color: ${white};
   font-weight: ${fontWeightMedium};
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 export const NavBarEmail = styled.div`
   font-size: ${fontSize};
   color: ${grayLight};
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 export const NavBarChavron = styled.div`
