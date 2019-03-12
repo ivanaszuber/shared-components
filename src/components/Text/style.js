@@ -11,6 +11,7 @@ import {
   fontWeightBold,
   fontWeightMedium,
   lineHeight,
+  lineHeightNormal,
 } from '../style/fonts';
 
 export const Span = styled.span`
@@ -66,6 +67,6 @@ export const Help = styled.label`
   font-family: ${fontFamily};
   font-size: 12px;
   font-weight: ${fontWeightMedium};
-  line-height: ${lineHeight};
+  line-height: ${lineHeightNormal};
 `;
 

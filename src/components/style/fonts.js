@@ -12,6 +12,7 @@ export const fontWeightBold = 700;
 
 // Line heights
 export const lineHeight = 1.5;
+export const lineHeightNormal = 'normal';
 
 // Font sizes
 export const fontSize   = '14px';

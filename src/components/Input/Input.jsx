@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import * as Styles from './style';
 import { Warning } from '../Icon';
 import Text from '../Text';
+import { red } from '../style/colors';
 
 const Input = ({
   disabled,
@@ -32,10 +33,12 @@ const Input = ({
       {...props}
     />
     {help.length > 0 && (
-      <Text type='help' htmlFor={name} hasError={hasError}>
-        {hasError && <Warning size="small" />}
-        {`${hasError ? ' ' : ''}${help}`}
-      </Text>
+      <Styles.HelpTextWrapper>
+        {hasError && <Warning size="small" color={red} />}
+        <Text type='help' htmlFor={name} hasError={hasError}>
+          {`${hasError ? ' ' : ''}${help}`}
+        </Text>
+      </Styles.HelpTextWrapper>
     )}
   </Styles.InputWrapper>
 );

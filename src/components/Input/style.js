@@ -65,3 +65,14 @@ export const InputStyled = styled.input`
     }
   }
 `;
+
+export const HelpTextWrapper = styled.div`
+  display: flex;
+  display: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  & > * {
+    margin-right: 4px;
+  }
+`;
