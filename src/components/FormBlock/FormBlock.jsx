@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import * as Styles from './style';
 
 const FormBlockStyled = styled.div`
-  ${Styles.FormBlockBase}
+  ${Styles.FormBlockBase};
   ${props => props.withBackground && Styles.withBackground};
   ${props => props.withBorder && Styles.withBorder};
   ${props => props.inline && Styles.inline};
-  ${props => Styles[props.align]}
+  ${props => Styles[props.align]};
+  ${props => props.condensed && Styles.condensed};
 `;
 
 const FormBlock = ({
@@ -16,13 +17,15 @@ const FormBlock = ({
   inline,
   withBorder,
   withBackground,
-  children
+  children,
+  condensed
 }) => (
   <FormBlockStyled
     align={align}
     inline={inline}
     withBorder={withBorder}
     withBackground={withBackground}
+    condensed={condensed}
   >
     {children}
   </FormBlockStyled>
@@ -33,6 +36,7 @@ FormBlock.propTypes = {
   inline: PropTypes.bool,
   withBorder: PropTypes.bool,
   withBackground: PropTypes.bool,
+  condensed: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.func, PropTypes.node])
 };
 
@@ -41,6 +45,7 @@ FormBlock.defaultProps = {
   inline: false,
   withBorder: false,
   withBackground: false,
+  condensed: false,
   children: null
 }
 

@@ -32,3 +32,7 @@ export const left = css`
 export const right = css`
   justify-content: flex-end;
 `;
+
+export const condensed = css`
+  padding: 8px 16px;
+`;
