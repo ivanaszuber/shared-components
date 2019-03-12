@@ -9,9 +9,10 @@ export const NavBarStyled = styled.div`
   align-items: center;
   justify-content: center;
   background: ${grayDark};
-  padding: 0px 16px;
+  padding: 0px 16px 0px 16px;
   height: 64px;
   width: 230px;
+  box-sizing: border-box;
 `;
 
 export const NavBarUser = styled.div`
@@ -19,12 +20,11 @@ export const NavBarUser = styled.div`
   align-items: end;
   flex-direction: column;
   overflow: hidden;
-  margin-right: 20px;
 `;
 
 export const NavBarAvatar = styled.div`
   border-radius: 100px;
-  width: 60px;
+  width: 40px;
   height: 40px;
   background: ${gray};
   cursor: pointer;

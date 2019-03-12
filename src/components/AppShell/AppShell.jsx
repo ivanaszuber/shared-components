@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavBar from '../NavBar';
+import GlobalStyles from './GlobalStyles';
 
 import { AppShellStyled, Wrapper, SidebarWrapper, ContentWrapper } from './style';
 
@@ -9,6 +10,7 @@ import { AppShellStyled, Wrapper, SidebarWrapper, ContentWrapper } from './style
  */
 const AppShell = ({ user, activeProduct, sidebar: SidebarComponent, content: ContentComponent }) => (
   <AppShellStyled>
+    <GlobalStyles />
     <NavBar user={user} activeProduct={activeProduct} />
     <Wrapper>
       <SidebarWrapper>
