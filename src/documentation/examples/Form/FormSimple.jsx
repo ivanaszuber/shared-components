@@ -17,7 +17,7 @@ export default function ExampleForm() {
             label="Some input"
           />
         </FormBlock>
-        <FormBlock align="right" inline>
+        <FormBlock align="right" inline condensed>
           <Button
             type="text"
             label="Cancel"
