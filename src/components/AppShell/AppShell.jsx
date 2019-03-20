@@ -8,11 +8,7 @@ import { AppShellStyled, Wrapper, SidebarWrapper, ContentWrapper } from './style
 /**
  * The AppShell component is a general purpose wrapper for all of our applications.
  */
-<<<<<<< HEAD
-const AppShell = ({ user, activeProduct, sidebar: SidebarComponent, content: ContentComponent }) => (
-=======
 const AppShell = ({ user, sidebar, content }) => (
->>>>>>> task/improve-input-styles
   <AppShellStyled>
     <GlobalStyles />
     <NavBar user={user} activeProduct={activeProduct} />
@@ -40,14 +36,9 @@ AppShell.propTypes = {
       onItemClick: PropTypes.func,
     })),
   }).isRequired,
-<<<<<<< HEAD
   activeProduct: PropTypes.oneOf(['publish', 'analyze', 'reply']),
   sidebar: PropTypes.func.isRequired,
   content: PropTypes.func.isRequired,
-=======
-  sidebar: PropTypes.node.isRequired,
-  content: PropTypes.node.isRequired,
->>>>>>> task/improve-input-styles
 };
 
 AppShell.defaultProps = {
