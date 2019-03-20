@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import { grayLight } from '../../style/colors'
 import { fontSize, fontWeightBold } from '../../style/fonts'
-import { grayDarker } from '../../style/colors'
+import { grayLight, grayDarker } from '../../style/colors'
 
 export const SidebarSectionStyled = styled.div`
   margin: 16px 0px;
