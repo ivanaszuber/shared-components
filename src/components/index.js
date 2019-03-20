@@ -6,3 +6,4 @@ export { default as Form } from './Form';
 export { default as FormBlock } from './FormBlock';
 export { default as Sidebar } from './Sidebar';
 export { default as Card } from './Card';
+export { default as Modal } from './Modal';

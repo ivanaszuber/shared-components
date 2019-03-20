@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jest-auto-snapshots > Modal Matches snapshot when boolean prop "wide" is set to: "false" 1`] = `
+<styled.div>
+  <styled.section
+    background="jest-auto-snapshots String Fixture"
+    innerRef={[Function]}
+    wide={false}
+  >
+    <NodeFixture />
+    <styled.div>
+      <NodeFixture />
+      <Button
+        disabled={false}
+        fullWidth={false}
+        hasIconOnly={false}
+        label="jest-auto-snapshots String Fixture"
+        loading={false}
+        onClick={[Function]}
+        selectPosition="bottom"
+        size="medium"
+        type="text"
+      />
+      <Button
+        disabled={false}
+        fullWidth={false}
+        hasIconOnly={false}
+        innerRef={[Function]}
+        label="jest-auto-snapshots String Fixture"
+        loading={false}
+        onClick={[Function]}
+        selectPosition="bottom"
+        size="medium"
+        type="primary"
+      />
+    </styled.div>
+  </styled.section>
+</styled.div>
+`;
+
+exports[`jest-auto-snapshots > Modal Matches snapshot when passed all props 1`] = `
+<styled.div>
+  <styled.section
+    background="jest-auto-snapshots String Fixture"
+    innerRef={[Function]}
+    wide={true}
+  >
+    <NodeFixture />
+    <styled.div>
+      <NodeFixture />
+      <Button
+        disabled={false}
+        fullWidth={false}
+        hasIconOnly={false}
+        label="jest-auto-snapshots String Fixture"
+        loading={false}
+        onClick={[Function]}
+        selectPosition="bottom"
+        size="medium"
+        type="text"
+      />
+      <Button
+        disabled={false}
+        fullWidth={false}
+        hasIconOnly={false}
+        innerRef={[Function]}
+        label="jest-auto-snapshots String Fixture"
+        loading={false}
+        onClick={[Function]}
+        selectPosition="bottom"
+        size="medium"
+        type="primary"
+      />
+    </styled.div>
+  </styled.section>
+</styled.div>
+`;
+
+exports[`jest-auto-snapshots > Modal Matches snapshot when passed only required props 1`] = `
+<styled.div>
+  <styled.section
+    background={null}
+    innerRef={[Function]}
+    wide={false}
+  >
+    <NodeFixture />
+    <styled.div>
+      <Button
+        disabled={false}
+        fullWidth={false}
+        hasIconOnly={false}
+        innerRef={[Function]}
+        label="jest-auto-snapshots String Fixture"
+        loading={false}
+        onClick={[Function]}
+        selectPosition="bottom"
+        size="medium"
+        type="primary"
+      />
+    </styled.div>
+  </styled.section>
+</styled.div>
+`;
