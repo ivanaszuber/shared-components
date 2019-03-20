@@ -17,6 +17,10 @@ import {
 } from '../style/fonts';
 import Text from '../Text';
 
+export const InputWrapper = styled.div`
+  width: 100%;
+`;
+
 export const InputStyled = styled.input`
   box-sizing: border-box;
   margin: 8px 0px;

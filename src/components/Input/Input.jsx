@@ -17,7 +17,7 @@ const Input = ({
   type,
   value,
 }) => (
-  <div>
+  <Styles.InputWrapper>
     {label.length > 0 && <Text htmlFor={name} type='label'>{label}</Text>}
     <Styles.InputStyled
       disabled={disabled}
@@ -37,7 +37,7 @@ const Input = ({
         </Styles.HelpText>
       </Styles.HelpTextWrapper>
     )}
-  </div>
+  </Styles.InputWrapper>
 );
 
 Input.propTypes = {
