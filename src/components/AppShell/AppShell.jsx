@@ -8,16 +8,16 @@ import { AppShellStyled, Wrapper, SidebarWrapper, ContentWrapper } from './style
 /**
  * The AppShell component is a general purpose wrapper for all of our applications.
  */
-const AppShell = ({ user, activeProduct, sidebar, content }) => (
+const AppShell = ({ user, activeProduct, sidebar: SidebarComponent, content: ContentComponent }) => (
   <AppShellStyled>
     <GlobalStyles />
     <NavBar user={user} activeProduct={activeProduct} />
     <Wrapper>
       <SidebarWrapper>
-        {sidebar}
+        <SidebarComponent />
       </SidebarWrapper>
       <ContentWrapper>
-        {content}
+        <ContentComponent />
       </ContentWrapper>
     </Wrapper>
   </AppShellStyled>
