@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import * as Styles from './style';
 import { Warning } from '../Icon';
 import Text from '../Text';
-import { red } from '../style/colors';
 
 const Input = ({
   disabled,
@@ -17,9 +16,8 @@ const Input = ({
   size,
   type,
   value,
-  ...props
 }) => (
-  <Styles.InputWrapper>
+  <div>
     {label.length > 0 && <Text htmlFor={name} type='label'>{label}</Text>}
     <Styles.InputStyled
       disabled={disabled}
@@ -30,17 +28,16 @@ const Input = ({
       type={type}
       size={size}
       value={value}
-      {...props}
     />
     {help.length > 0 && (
       <Styles.HelpTextWrapper>
-        {hasError && <Warning size="small" color={red} />}
-        <Text type='help' htmlFor={name} hasError={hasError}>
-          {`${hasError ? ' ' : ''}${help}`}
-        </Text>
+        {hasError && <Warning size="small" />}
+        <Styles.HelpText type='help' htmlFor={name} hasError={hasError}>
+          {help}
+        </Styles.HelpText>
       </Styles.HelpTextWrapper>
     )}
-  </Styles.InputWrapper>
+  </div>
 );
 
 Input.propTypes = {
@@ -63,7 +60,7 @@ Input.propTypes = {
   /** The type of the input */
   type: PropTypes.string,
   /** The value of the input */
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -74,7 +71,7 @@ Input.defaultProps = {
   placeholder: '',
   size: 'regular',
   type: 'text',
-  value: undefined
+  value: undefined,
 }
 
 export default Input;
