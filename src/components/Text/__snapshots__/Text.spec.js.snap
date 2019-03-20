@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`jest-auto-snapshots > Text Matches snapshot when boolean prop "hasError" is set to: "false" 1`] = `
-<ForwardRef>
+<styled.span>
   <NodeFixture />
-</ForwardRef>
+</styled.span>
 `;
 
 exports[`jest-auto-snapshots > Text Matches snapshot when boolean prop "light" is set to: "false" 1`] = `
-<ForwardRef>
+<styled.span>
   <NodeFixture />
-</ForwardRef>
+</styled.span>
 `;
 
 exports[`jest-auto-snapshots > Text Matches snapshot when passed all props 1`] = `
-<ForwardRef>
+<styled.span>
   <NodeFixture />
-</ForwardRef>
+</styled.span>
 `;

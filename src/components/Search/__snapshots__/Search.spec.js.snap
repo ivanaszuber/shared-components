@@ -1,34 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`jest-auto-snapshots > Search Matches snapshot when boolean prop "isOpen" is set to: "false" 1`] = `
-<ForwardRef>
-  <ForwardRef
+<styled.div>
+  <styled.input
+    innerRef={[Function]}
     onChange={[Function]}
     placeholder="jest-auto-snapshots String Fixture"
     type="text"
     value=""
   />
-</ForwardRef>
+</styled.div>
 `;
 
 exports[`jest-auto-snapshots > Search Matches snapshot when passed all props 1`] = `
-<ForwardRef>
-  <ForwardRef
+<styled.div>
+  <styled.input
+    innerRef={[Function]}
     onChange={[Function]}
     placeholder="jest-auto-snapshots String Fixture"
     type="text"
     value=""
   />
-</ForwardRef>
+</styled.div>
 `;
 
 exports[`jest-auto-snapshots > Search Matches snapshot when passed only required props 1`] = `
-<ForwardRef>
-  <ForwardRef
+<styled.div>
+  <styled.input
+    innerRef={[Function]}
     onChange={[Function]}
     placeholder=""
     type="text"
     value=""
   />
-</ForwardRef>
+</styled.div>
 `;

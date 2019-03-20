@@ -31,7 +31,7 @@ const Input = ({
     />
     {help.length > 0 && (
       <Styles.HelpTextWrapper>
-        {hasError && <Warning size="small" />}
+        {hasError && <Warning size="medium" />}
         <Styles.HelpText type='help' htmlFor={name} hasError={hasError}>
           {help}
         </Styles.HelpText>

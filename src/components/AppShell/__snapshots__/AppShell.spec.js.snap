@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`jest-auto-snapshots > AppShell Matches snapshot when passed only required props 1`] = `
-<ForwardRef>
+<styled.div>
   <NavBar
     user={
       Object {
@@ -20,13 +20,13 @@ exports[`jest-auto-snapshots > AppShell Matches snapshot when passed only requir
       }
     }
   />
-  <ForwardRef>
-    <ForwardRef>
-      <mockConstructor />
-    </ForwardRef>
-    <ForwardRef>
-      <mockConstructor />
-    </ForwardRef>
-  </ForwardRef>
-</ForwardRef>
+  <styled.div>
+    <styled.div>
+      <NodeFixture />
+    </styled.div>
+    <styled.div>
+      <NodeFixture />
+    </styled.div>
+  </styled.div>
+</styled.div>
 `;

@@ -39,7 +39,7 @@ export default class Search extends React.Component {
           placeholder={placeholder}
           type="text"
           value={search}
-          ref={inputRef => this.inputRef = inputRef}
+          innerRef={inputRef => this.inputRef = inputRef}
           onChange={event => this.onChange(event)}
         />
       </SearchWrapper>

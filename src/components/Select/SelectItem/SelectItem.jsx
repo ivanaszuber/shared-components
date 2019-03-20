@@ -7,6 +7,7 @@ import {
   SelectItemIcon,
   SelectItemTitle,
   SelectItemCustom,
+  CheckIconWrapper,
 } from './style';
 
 const SelectItem = ({
@@ -16,21 +17,40 @@ const SelectItem = ({
   keyMap,
   hasSelectedItems,
   getItemId,
+  hasSearch,
+  multiSelect,
 }) => (
   <SelectItemStyled
     onClick={item.onItemClick || onClick}
     hovered={hovered}
     id={getItemId(item)}
   >
-    <SelectItemLabel>
-      {item.selected && <Checkmark color="gray" />}
+    <SelectItemLabel
+      hasSearch={hasSearch}
+      hasSelectedItems={hasSelectedItems}
+      hasComponent={item.component}
+    >
+      {item.selected && (
+        <CheckIconWrapper>
+          <Checkmark color="grayDarker" />
+        </CheckIconWrapper>
+      )}
       {item.icon && (
         <SelectItemIcon hovered={hovered}>{item.icon}</SelectItemIcon>
       )}
       {item.component && (
-        <SelectItemCustom dangerouslySetInnerHTML={{ __html: item.component(item) }} />
+        <CheckIconWrapper>
+          <SelectItemCustom
+            dangerouslySetInnerHTML={{ __html: item.component(item) }}
+          />
+        </CheckIconWrapper>
       )}
-      <SelectItemTitle moveRight={hasSelectedItems && !item.selected}>
+      <SelectItemTitle
+        moveRight={
+          (hasSelectedItems && !item.selected) ||
+          (multiSelect && !item.selected)
+        }
+      >
         {item[keyMap ? keyMap.title : 'title']}
       </SelectItemTitle>
     </SelectItemLabel>
@@ -45,7 +65,7 @@ SelectItem.propTypes = {
     onItemClick: PropTypes.func,
     selected: PropTypes.bool,
     icon: PropTypes.node,
-    component: PropTypes.func
+    component: PropTypes.func,
   }).isRequired,
 
   /** On click function */
@@ -65,12 +85,20 @@ SelectItem.propTypes = {
 
   /** Does the Select have selected items to adjust the margin */
   hasSelectedItems: PropTypes.bool,
+
+  /** Does the Select have a search bar incorporated */
+  hasSearch: PropTypes.bool,
+
+  /** Is it a multi select */
+  multiSelect: PropTypes.bool,
 };
 
 SelectItem.defaultProps = {
   hovered: undefined,
   keyMap: undefined,
   hasSelectedItems: undefined,
+  hasSearch: undefined,
+  multiSelect: undefined,
 };
 
 export default SelectItem;

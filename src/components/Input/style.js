@@ -19,6 +19,7 @@ import Text from '../Text';
 
 export const InputStyled = styled.input`
   box-sizing: border-box;
+  margin: 8px 0px;
   background: ${ ({ hasError }) => hasError ? redLight : white };
   border-radius: 4px;
   border: 1px solid ${ ({ hasError }) => hasError ? red : grayLight };
@@ -73,10 +74,9 @@ export const HelpTextWrapper = styled.div`
   display: row;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 8px;
   color: ${red};
 `;
 
 export const HelpText = styled(Text)`
-  margin-left: ${props => props.hasError ? '4px' : '0px'};
+  margin-left: ${props => props.hasError ? '8px' : '0px'};
 `;

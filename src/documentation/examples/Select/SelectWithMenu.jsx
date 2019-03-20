@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from '@bufferapp/ui/Select';
 import { Person, People, Gear, ArrowLeft } from '@bufferapp/ui/Icon';
-import {NavBarMenu} from '@bufferapp/ui/NavBar';
+import { NavBarMenu } from '@bufferapp/ui/NavBar';
 
 /** With Custom Component */
 export default function ExampleSelectMenu() {
@@ -43,6 +43,7 @@ export default function ExampleSelectMenu() {
           onItemClick: () => console.info('Logout Clicked'),
         },
       ]}
+      marginTop="32px"
     />
   );
 }
