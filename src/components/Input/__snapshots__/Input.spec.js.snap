@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`jest-auto-snapshots > Input Matches snapshot when boolean prop "disabled" is set to: "false" 1`] = `
-<div>
+<styled.div>
   <Text
     hasError={false}
     htmlFor="jest-auto-snapshots String Fixture"
@@ -32,11 +32,11 @@ exports[`jest-auto-snapshots > Input Matches snapshot when boolean prop "disable
       jest-auto-snapshots String Fixture
     </Styled(Text)>
   </styled.div>
-</div>
+</styled.div>
 `;
 
 exports[`jest-auto-snapshots > Input Matches snapshot when boolean prop "hasError" is set to: "false" 1`] = `
-<div>
+<styled.div>
   <Text
     hasError={false}
     htmlFor="jest-auto-snapshots String Fixture"
@@ -64,11 +64,11 @@ exports[`jest-auto-snapshots > Input Matches snapshot when boolean prop "hasErro
       jest-auto-snapshots String Fixture
     </Styled(Text)>
   </styled.div>
-</div>
+</styled.div>
 `;
 
 exports[`jest-auto-snapshots > Input Matches snapshot when passed all props 1`] = `
-<div>
+<styled.div>
   <Text
     hasError={false}
     htmlFor="jest-auto-snapshots String Fixture"
@@ -99,11 +99,11 @@ exports[`jest-auto-snapshots > Input Matches snapshot when passed all props 1`] 
       jest-auto-snapshots String Fixture
     </Styled(Text)>
   </styled.div>
-</div>
+</styled.div>
 `;
 
 exports[`jest-auto-snapshots > Input Matches snapshot when passed only required props 1`] = `
-<div>
+<styled.div>
   <styled.input
     disabled={false}
     hasError={false}
@@ -113,5 +113,5 @@ exports[`jest-auto-snapshots > Input Matches snapshot when passed only required 
     size="regular"
     type="text"
   />
-</div>
+</styled.div>
 `;

@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import styled from 'styled-components';
 import { grayDarker, gray, grayLight } from '../../style/colors';
-import { fontWeightMedium, fontSize } from '../../style/fonts';
+import { fontFamily, fontWeightMedium, fontSize } from '../../style/fonts';
 
 export const SelectItemStyled = styled.li`
   min-height: 32px;
@@ -10,6 +10,7 @@ export const SelectItemStyled = styled.li`
   cursor: pointer;
   display: flex;
   font-size: ${fontSize};
+  font-family: ${fontFamily};
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;

@@ -97,6 +97,7 @@ class Modal extends React.Component {
               <Button
                 type="text"
                 onClick={() => {this.handleAction(secondaryAction); }}
+                disabled={secondaryAction.disabled}
                 label={secondaryAction.label}
               />
             )}
@@ -104,6 +105,7 @@ class Modal extends React.Component {
               innerRef={ctaButton => (this.ctaButton = ctaButton)}
               type="primary"
               onClick={() => {this.handleAction(action); }}
+              disabled={action.disabled}
               label={action.label}
             />
           </Styles.Footer>
@@ -118,14 +120,16 @@ Modal.propTypes = {
   background: PropTypes.string,
   /** The content of the modal */
   children: PropTypes.node.isRequired,
-    /** The main action settings {**label**: the label of the button, **callback** a callback to invoke on action click, before dismiss */
+    /** The main action settings {**label**: the label of the button,  **disabled** to disable the button, **callback** a callback to invoke on action click, before dismiss */
   action: PropTypes.shape({
     label: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
     callback: PropTypes.func,
   }).isRequired,
-    /** The secondary action settings {**label**: the label of the button, **callback** a callback to invoke on action click, before dismiss */
+    /** The secondary action settings {**label**: the label of the button, **disabled** to disable the button, **callback** a callback to invoke on action click, before dismiss */
   secondaryAction: PropTypes.shape({
     label: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
     callback: PropTypes.func,
   }),
   /** The cookie settings if it's omitted the modal won't use cookies {**days**: expire time of the cookie in days, **store**, usually document.cookie, **key**: the key of the cookie} */

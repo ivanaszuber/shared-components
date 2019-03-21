@@ -8,7 +8,7 @@ export default function ModalTest() {
   return (
     <div style={{ width: '100%', height: '400px', position: 'relative' }}>
       <Modal
-        action={{ label: "It has already happened" }}
+        action={{ label: "It has already happened", disabled: true, }}
         secondaryAction={{ label: "Close" }}
         footer={(<Text type="p">Oprional footer text!</Text>)}
       >
