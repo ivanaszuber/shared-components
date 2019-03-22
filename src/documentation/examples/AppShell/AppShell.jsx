@@ -9,6 +9,7 @@ export default function ExampleAppShell() {
         email: 'hamstu@gmail.comffffffffddddddddd',
         menuItems: [],
       }}
+      globalNotification={() => <div>NOTIFICATION</div>}
       sidebar={() => <div>Sidebar</div>}
       content={() => <div>Main content.</div>}
     />
