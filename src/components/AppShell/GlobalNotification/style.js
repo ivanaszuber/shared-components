@@ -4,7 +4,7 @@ import { white, blueDarker } from '../../style/colors';
 export const GlobalNotificationStyled = styled.div`
   width: 100%;
   background-color: ${blueDarker};
-  padding: 16px;
+  padding: 8px;
   text-align: center;
   color: ${white};
   font-weight: bold;
