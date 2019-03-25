@@ -33,17 +33,17 @@ const ProductText = styled.span`
   vertical-align: middle;
 `;
 
-const NavBarProduct = ({ activeProduct }) => (
+const NavBarProduct = ({ activeProducts }) => (
   <StlyedNavBarProduct>
-    <ProductLink active={activeProduct === 'publish'} href='https://publish.buffer.com'>
+    <ProductLink active={activeProducts.includes('publish')} href='https://publish.buffer.com'>
       <IconPublish verticalAlign="middle" />
       <ProductText>Publish</ProductText>
     </ProductLink>
-    <ProductLink active={activeProduct === 'reply'} href='https://reply.buffer.com'>
+    <ProductLink active={activeProducts.includes('reply')} href='https://reply.buffer.com'>
       <IconReply verticalAlign="middle" />
       <ProductText>Reply</ProductText>
     </ProductLink>
-    <ProductLink active={activeProduct === 'analyze'} href='https://analyze.buffer.com'>
+    <ProductLink active={activeProducts.includes('analyze')} href='https://analyze.buffer.com'>
       <IconAnalyze verticalAlign="middle" />
       <ProductText>Analyze</ProductText>
     </ProductLink>
@@ -51,11 +51,11 @@ const NavBarProduct = ({ activeProduct }) => (
 );
 
 NavBarProduct.propTypes = {
-  activeProduct: PropTypes.oneOf(['publish', 'analyze', 'reply']),
+  activeProducts: PropTypes.arrayOf(PropTypes.oneOf(['publish', 'analyze', 'reply'])),
 };
 
 NavBarProduct.defaultProps = {
-  activeProduct: 'publish',
+  activeProducts: ['publish'],
 };
 
 export default NavBarProduct;

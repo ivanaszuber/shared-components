@@ -12,6 +12,7 @@ export default function ExampleAppShell() {
       globalNotification={() => <div>NOTIFICATION</div>}
       sidebar={() => <div>Sidebar</div>}
       content={() => <div>Main content.</div>}
+      activeProducts={['publish', 'analyze']}
     />
   );
 }

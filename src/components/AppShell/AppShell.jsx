@@ -9,13 +9,13 @@ import { AppShellStyled, Wrapper, SidebarWrapper, ContentWrapper } from './style
  */
 const AppShell = ({
   user,
-  activeProduct,
+  activeProducts,
   globalNotification: GlobalNotificationComponent,
   sidebar: SidebarComponent,
   content: ContentComponent
 }) => (
   <AppShellStyled>
-    <NavBar user={user} activeProduct={activeProduct} />
+    <NavBar user={user} activeProducts={activeProducts} />
     {GlobalNotificationComponent && (
       <GlobalNotification>
         <GlobalNotificationComponent />
@@ -46,13 +46,13 @@ AppShell.propTypes = {
     })),
   }).isRequired,
   globalNotification: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
-  activeProduct: PropTypes.oneOf(['publish', 'analyze', 'reply']),
+  activeProducts: PropTypes.arrayOf(PropTypes.oneOf(['publish', 'analyze', 'reply'])),
   sidebar: PropTypes.func.isRequired,
   content: PropTypes.func.isRequired,
 };
 
 AppShell.defaultProps = {
-  activeProduct: 'publish',
+  activeProducts: ['publish'],
   globalNotification: null
 };
 
