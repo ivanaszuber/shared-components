@@ -33,22 +33,31 @@ const ProductText = styled.span`
   vertical-align: middle;
 `;
 
-const NavBarProduct = ({ activeProducts }) => (
-  <StlyedNavBarProduct>
-    <ProductLink active={activeProducts.includes('publish')} href='https://publish.buffer.com'>
-      <IconPublish verticalAlign="middle" />
-      <ProductText>Publish</ProductText>
-    </ProductLink>
-    <ProductLink active={activeProducts.includes('reply')} href='https://reply.buffer.com'>
-      <IconReply verticalAlign="middle" />
-      <ProductText>Reply</ProductText>
-    </ProductLink>
-    <ProductLink active={activeProducts.includes('analyze')} href='https://analyze.buffer.com'>
-      <IconAnalyze verticalAlign="middle" />
-      <ProductText>Analyze</ProductText>
-    </ProductLink>
-  </StlyedNavBarProduct>
-);
+const NavBarProduct = ({ activeProducts }) => {
+
+  const hasPublish = activeProducts.includes('publish');
+  const hasReply = activeProducts.includes('reply');
+  // If the user has a Publish account then we redirect to 'http://analyze.buffer.com'
+  // Analyze itself takes care of redirecting the user to the marketing page if needed.
+  const hasAnalyze = hasPublish;
+
+  return (
+    <StlyedNavBarProduct>
+      <ProductLink href={hasPublish ? 'https://publish.buffer.com': 'https://buffer.com/'}>
+        <IconPublish verticalAlign="middle" />
+        <ProductText>Publish</ProductText>
+      </ProductLink>
+      <ProductLink href={hasReply ? 'https://reply.buffer.com' : 'https://buffer.com/reply'}>
+        <IconReply verticalAlign="middle" />
+        <ProductText>Reply</ProductText>
+      </ProductLink>
+      <ProductLink href={hasAnalyze ? 'https://analyze.buffer.com' : 'https://buffer.com/analyze'}>
+        <IconAnalyze verticalAlign="middle" />
+        <ProductText>Analyze</ProductText>
+      </ProductLink>
+    </StlyedNavBarProduct>
+  );
+};
 
 NavBarProduct.propTypes = {
   activeProducts: PropTypes.arrayOf(PropTypes.oneOf(['publish', 'analyze', 'reply'])),
