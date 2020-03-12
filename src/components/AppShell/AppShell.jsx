@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import NavBar from '../NavBar';
 import Banner from '../Banner';
+import LoaderEngage from './LoaderEngage/LoaderEngage';
 // import GlobalStyles from '../GlobalStyles';
 
 import {
@@ -23,26 +24,46 @@ const AppShell = ({
   content,
   bannerOptions,
   onLogout,
-}) => (
-  <AppShellStyled>
-    {/* <GlobalStyles /> */}
-    <NavBar
-      activeProduct={activeProduct}
-      user={user}
-      helpMenuItems={helpMenuItems}
-      onLogout={onLogout}
-    />
-    {bannerOptions && (
-      <Banner
-        {...bannerOptions}
+}) => {
+
+  const [loading, setLoading] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const onLoading = product => {
+    setSelectedProduct(product);
+    setLoading(true);
+
+    let href = 'https://publish.buffer.com';
+    if (product === 'reply') href = 'https://reply.buffer.com';
+    if (product === 'analyze') href = 'https://analyze.buffer.com';
+    if (product === 'engage') href = 'http://localhost:8080';
+    window.location = href;
+  }
+
+  return (
+    <AppShellStyled>
+      {/* <GlobalStyles /> */}
+      <NavBar
+        activeProduct={activeProduct}
+        user={user}
+        helpMenuItems={helpMenuItems}
+        onLogout={onLogout}
+        onLoading={onLoading}
       />
-    )}
-    <Wrapper>
-      {sidebar && <SidebarWrapper>{sidebar}</SidebarWrapper>}
-      <ContentWrapper>{content}</ContentWrapper>
-    </Wrapper>
-  </AppShellStyled>
-);
+      {bannerOptions && (
+        <Banner
+          {...bannerOptions}
+        />
+      )}
+      <Wrapper>
+        {sidebar && <SidebarWrapper>{sidebar}</SidebarWrapper>}
+        <ContentWrapper>
+          {loading && selectedProduct === 'engage' ? <LoaderEngage /> : content}
+        </ContentWrapper>
+      </Wrapper>
+    </AppShellStyled>
+  );
+};
 
 AppShell.propTypes = {
   /** The currently active (highlighted) product in the `NavBar`, one of `'publish', 'reply', 'analyze'` */

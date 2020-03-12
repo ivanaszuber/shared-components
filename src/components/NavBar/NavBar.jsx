@@ -104,19 +104,44 @@ export function appendMenuItem(ignoreMenuItems, menuItem) {
  * The NavBar is not consumed alone, but instead is used by the AppShell component. Go check out the AppShell component to learn more.
  */
 class NavBar extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = { selectedProduct: props.activeProduct };
+  }
+
+  /*
   shouldComponentUpdate(nextProps) {
     return nextProps.user.name !== this.props.user.name ||
       nextProps.user.email !== this.props.user.email;
   }
+  */
+
+  onLoadProduct = (event, product) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    this.setState({
+      selectedProduct: product
+    });
+
+    this.props.onLoading(product);
+  }
 
   render() {
-    const { activeProduct, user, helpMenuItems, onLogout } = this.props;
+    const { user, helpMenuItems, onLogout } = this.props;
+    const { selectedProduct } = this.state;
+
     return (
       <NavBarStyled>
         <NavBarLeft>
           <BufferLogo />
           <NavBarVerticalRule />
-          <NavBarProducts activeProduct={activeProduct} />
+          <NavBarProducts
+            activeProduct={selectedProduct}
+            onLoadProduct={this.onLoadProduct}
+          />
         </NavBarLeft>
         <NavBarRight>
           {helpMenuItems && (
@@ -204,13 +229,15 @@ NavBar.propTypes = {
     })
   ),
 
-  onLogout: PropTypes.func
+  onLogout: PropTypes.func,
+  onLoading: PropTypes.func
 };
 
 NavBar.defaultProps = {
   activeProduct: undefined,
   helpMenuItems: null,
-  onLogout: undefined
+  onLogout: undefined,
+  onLoading: null
 };
 
 export default NavBar;

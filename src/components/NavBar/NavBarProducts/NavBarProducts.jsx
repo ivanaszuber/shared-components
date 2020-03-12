@@ -68,11 +68,12 @@ const AnalyzeLogo = () => (
 );
 
 
-const NavBarProduct = ({ activeProduct }) => (
+const NavBarProduct = ({ activeProduct, onLoadProduct }) => (
   <StlyedNavBarProduct>
     <ProductLink
       active={activeProduct === 'publish'}
       href='https://publish.buffer.com'
+      onClick={event => onLoadProduct(event, 'publish')}
     >
       <PublishLogo />
       <ProductText>Publish</ProductText>
@@ -80,6 +81,7 @@ const NavBarProduct = ({ activeProduct }) => (
     <ProductLink
       active={activeProduct === 'reply'}
       href='https://reply.buffer.com'
+      onClick={event => onLoadProduct(event, 'reply')}
     >
       <ReplyLogo />
       <ProductText>Reply</ProductText>
@@ -87,19 +89,30 @@ const NavBarProduct = ({ activeProduct }) => (
     <ProductLink
       active={activeProduct === 'analyze'}
       href='https://analyze.buffer.com'
+      onClick={event => onLoadProduct(event, 'analyze')}
     >
       <AnalyzeLogo />
       <ProductText>Analyze</ProductText>
+    </ProductLink>
+    <ProductLink
+      active={activeProduct === 'engage'}
+      href='http://localhost:8080/'
+      onClick={event => onLoadProduct(event, 'engage')}
+    >
+      <AnalyzeLogo />
+      <ProductText>Engage</ProductText>
     </ProductLink>
   </StlyedNavBarProduct>
 );
 
 NavBarProduct.propTypes = {
-  activeProduct: PropTypes.oneOf(['publish', 'analyze', 'reply']),
+  activeProduct: PropTypes.oneOf(['publish', 'analyze', 'reply', 'engage']),
+  onLoadProduct: PropTypes.func
 };
 
 NavBarProduct.defaultProps = {
   activeProduct: undefined,
+  onLoadProduct: null
 };
 
 export default NavBarProduct;
