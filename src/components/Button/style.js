@@ -62,7 +62,6 @@ export const ButtonWrapperBase = css`
   }
 `;
 
-
 export const ButtonContainerBase = css`
   -webkit-appearance: none;
   align-items: center;
