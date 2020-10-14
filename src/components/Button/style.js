@@ -85,7 +85,6 @@ export const ButtonNestedBase = css`
   font-size: inherit;
   font-weight: inherit;
   justify-content: flex-start;
-  margin: -1px;
   padding: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
