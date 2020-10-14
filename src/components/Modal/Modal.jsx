@@ -131,17 +131,19 @@ class Modal extends React.Component {
           {children}
           <Styles.Footer background={background}>
             {footer}
-            {secondaryAction && (
-              <Button
-                type="text"
-                onClick={() => {
-                  this.handleAction(secondaryAction);
-                }}
-                disabled={secondaryAction.disabled}
-                label={secondaryAction.label}
-              />
-            )}
-            {action && (
+            {secondaryAction &&
+              secondaryAction.label &&
+              secondaryAction.callback && (
+                <Button
+                  type="text"
+                  onClick={() => {
+                    this.handleAction(secondaryAction);
+                  }}
+                  disabled={secondaryAction.disabled}
+                  label={secondaryAction.label}
+                />
+              )}
+            {action && action.label && action.callback && (
               <Button
                 ref={ctaButton => (this.ctaButton = ctaButton)}
                 type="primary"
@@ -168,7 +170,7 @@ Modal.propTypes = {
   action: PropTypes.shape({
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
-    callback: PropTypes.func,
+    callback: PropTypes.func.isRequired,
   }),
   /** Verifies if the modal should be dismissed right after the action is executed, in case we are doing a validation inside the modal before closing it */
   dismissible: PropTypes.bool,
@@ -176,7 +178,7 @@ Modal.propTypes = {
   secondaryAction: PropTypes.shape({
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
-    callback: PropTypes.func,
+    callback: PropTypes.func.isRequired,
   }),
   /** The cookie settings if it's omitted the modal won't use cookies {**days**: expire time of the cookie in days, **store**, usually document.cookie, **key**: the key of the cookie} */
   cookie: PropTypes.shape({
