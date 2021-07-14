@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const LinkWrapper = styled(Link)`
+const linkWrapperStyleString = `
     position: relative;
     display: flex;
     flex-direction: row;
@@ -26,6 +26,14 @@ const LinkWrapper = styled(Link)`
     &:hover {
        border-color: #2E5DF8;
     }
+`
+
+const ExternalLinkWrapper = styled.a`
+    ${linkWrapperStyleString}
+`;
+
+const LinkWrapper = styled(Link)`
+    ${linkWrapperStyleString}
 `;
 
 const LinkBody = styled.div`
@@ -42,13 +50,26 @@ const LinkTitle = styled.h3`
 `;
 
 
-const LinkItem = ({ children, href }) => (
-  <LinkWrapper to={`/${href}`}>
-    <LinkBody>
-      <LinkTitle>{`→ ${children}`}</LinkTitle>
-    </LinkBody>
-  </LinkWrapper>
-);
+const LinkItem = ({ children, href }) => {
+  // "Don't use <Link> for external URLs. Just use an <a>."
+  // Source: https://github.com/ReactTraining/react-router/issues/6344#issuecomment-423233981
+  if (/^https?:\/\//.test(href)) {
+    return (
+      <ExternalLinkWrapper href={href}>
+        <LinkBody>
+          <LinkTitle>{`→ ${children}`}</LinkTitle>
+        </LinkBody>
+      </ExternalLinkWrapper>
+    )
+  }
+  return (
+    <LinkWrapper to={`/${href}`}>
+      <LinkBody>
+        <LinkTitle>{`→ ${children}`}</LinkTitle>
+      </LinkBody>
+    </LinkWrapper>
+  )
+};
 
 LinkItem.propTypes = {
   children: PropTypes.string.isRequired,
